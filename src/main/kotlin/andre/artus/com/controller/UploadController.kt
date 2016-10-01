@@ -57,7 +57,7 @@ class UploadController {
   }
 
 
-  @Value("\${multipart.location}")
+  @Value("\${spring.http.multipart.location}")
   lateinit private var location: String
 
 
