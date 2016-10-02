@@ -37,11 +37,10 @@ class UploadController {
              @RequestParam("speed", defaultValue = "1") speed: Int = 1,
              @RequestParam("repeat", defaultValue = "no") repeat: Boolean = false): String {
     log.info("Save file to {}", location)
-    println("Save file to $location")
     val ext = file.originalFilename.substringAfterLast('/').substringAfterLast('.')
     val currentTimeMillis = System.currentTimeMillis()
     val videoFile = File("$location/$currentTimeMillis.$ext")
-    println("Save file to $videoFile")
+
     file.transferTo(videoFile)
     log.debug("Saved file to absolutePath{}", videoFile.absolutePath)
 
